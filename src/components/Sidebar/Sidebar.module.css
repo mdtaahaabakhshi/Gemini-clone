@@ -1,0 +1,87 @@
+.sidebar {
+  min-height: 100vh;
+  display: inline-flex;
+  flex-direction:column;
+  justify-content: space-between;
+  background-color: #f0f4f9;
+  padding: 25px 15px;
+  & img {
+    width: 1.5rem;
+    width: 20px;
+  }
+  & .menu {
+    display: block;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+}
+
+.newChat {
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+  padding: 10px 15px;
+  border-radius: 50px;
+  background-color: #dcdfe3da;
+  font-size: 16px;
+  color: gray;
+  cursor: pointer;
+}
+.recent {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+
+  & .recent_title {
+    margin-bottom: 20px;
+  }
+}
+.recent_entry {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  padding: 10px;
+  padding-right: 40px;
+  border-radius: 50px;
+  color: #282828;
+  cursor: pointer;
+  &:hover{
+    background-color:#e2e6eb;
+  }
+}
+.bottom {
+  display: flex;
+flex-direction: column;
+
+& .bottom_item {
+ padding-right: 10px; 
+}
+}
+
+.recent {
+  max-height: 0; /* or another suitable value */
+  transition: opacity .4s ease, max-height .4s ease;
+  overflow: hidden; /* To hide the overflow when collapsed */
+}
+
+.recent.show {
+  max-height: 150px; /* Set to a suitable value to show the content */
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typing_effect {
+  display: inline-block;
+  overflow: hidden; /* Ensures the text is hidden until the animation */
+  white-space: nowrap; /* Prevents text wrapping */
+  animation: typing .7s steps(10,end) forwards; /* Adjust duration and steps as needed */
+}
