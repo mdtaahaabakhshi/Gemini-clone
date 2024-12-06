@@ -1,5 +1,6 @@
 .sidebar {
-  min-height: 100vh;
+min-height: 100vh;
+/* height: 100%; */
   display: inline-flex;
   flex-direction:column;
   justify-content: space-between;
@@ -32,10 +33,11 @@
 .recent {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
-
+  margin-top: 50px;
+  overflow-y: scroll;
   & .recent_title {
-    margin-bottom: 20px;
+    position: absolute;
+    top: 28%;
   }
 }
 .recent_entry {
@@ -43,7 +45,9 @@
   align-items: start;
   gap: 10px;
   padding: 10px;
-  padding-right: 40px;
+  padding-right: 30px;
+  
+  
   border-radius: 50px;
   color: #282828;
   cursor: pointer;
@@ -61,13 +65,32 @@ flex-direction: column;
 }
 
 .recent {
-  max-height: 0; /* or another suitable value */
+  max-height: 0; 
   transition: opacity .4s ease, max-height .4s ease;
-  overflow: hidden; /* To hide the overflow when collapsed */
+  overflow: hidden; 
 }
 
 .recent.show {
-  max-height: 150px; /* Set to a suitable value to show the content */
+  max-height: 150px; 
+  overflow-y: scroll;
+margin-top: 80px;
+
+}
+.recent::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+}
+
+.recent::-webkit-scrollbar-track {
+  background: #f0f4f9; /* Background of the scrollbar track */
+}
+
+.recent::-webkit-scrollbar-thumb {
+  background: #c0c4cc; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.recent::-webkit-scrollbar-thumb:hover {
+  background: #a0a4a8; /* Color of the scrollbar thumb on hover */
 }
 
 @keyframes typing {
@@ -84,4 +107,86 @@ flex-direction: column;
   overflow: hidden; /* Ensures the text is hidden until the animation */
   white-space: nowrap; /* Prevents text wrapping */
   animation: typing .7s steps(10,end) forwards; /* Adjust duration and steps as needed */
+}
+
+@media  (min-width:310px) and (max-width: 480px) {
+  .sidebar {
+    height: 100vh;
+     z-index: 1;
+      justify-content: space-between;
+      background-color: #f0f4f9;
+      padding: 15px 10px;
+      & img {
+        width: 1.5rem;
+        width: 12px;
+      }
+      & .menu {
+        display: block;
+        cursor: pointer;
+        margin-left: 5px;
+      }
+    }
+    
+    .newChat {
+
+      margin-top: 40px;
+      gap: 6px;
+   
+      padding: 6px 8px;
+      border-radius: 50px;
+      background-color: #dcdfe3da;
+      font-size: 11px;
+     & img{
+      width: 10px;
+     }
+    }
+    .recent {
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+      overflow-y: scroll;
+      & .recent_title {
+        position: absolute;
+        top: 23%;
+        font-size: 13px;
+      }
+    }
+    .recent_entry {
+      display: flex;
+      align-items: start;
+      gap: 7px;
+      padding: 5px;
+      padding-right: 10px;
+      border-radius: 50px;
+      color: #282828;
+      cursor: pointer;
+      &:hover{
+        background-color:#e2e6eb;
+      }
+      &{
+        font-size: 11px;
+      }
+    }
+    .bottom {
+      display: flex;
+    flex-direction: column;
+    & .bottom_item {
+     padding-right: 10px; 
+     font-size: 12px;
+     align-items: center;
+    }
+    }
+    
+    .recent {
+      max-height: 0; 
+      transition: opacity .4s ease, max-height .4s ease;
+      overflow: hidden; 
+    }
+    
+    .recent.show {
+      max-height: 150px; 
+      overflow-y: scroll;
+    margin-top: 65px;
+    
+    }
 }
