@@ -115,6 +115,7 @@ margin-top: 80px;
   .sidebar {
     height: 100vh;
      z-index: 1;
+     display: none;
       justify-content: space-between;
       background-color: #f0f4f9;
       padding: 15px 10px;
@@ -144,11 +145,13 @@ margin-top: 80px;
     }
     .recent {
       display: flex;
+      display: n;
       flex-direction: column;
       margin-top: 50px;
       overflow-y: scroll;
+      display: none;
       & .recent_title {
-        position: absolute;
+        position: relative;
         top: 23%;
         font-size: 13px;
       }
@@ -172,6 +175,9 @@ margin-top: 80px;
     .bottom {
       display: flex;
     flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    top:60% ;
     & .bottom_item {
      padding-right: 10px; 
      font-size: 12px;
