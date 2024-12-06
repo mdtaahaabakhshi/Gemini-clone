@@ -1,7 +1,7 @@
 .main {
   flex: 1;
-  /* min-height: 100vh; */
-  height: 100%;
+  min-height: 100vh;
+  /* height: 100%; */
   position: relative;
   padding-bottom: 15vh;
   & .nav {
