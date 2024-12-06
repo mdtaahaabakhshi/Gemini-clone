@@ -109,6 +109,8 @@ margin-top: 80px;
   animation: typing .7s steps(10,end) forwards; /* Adjust duration and steps as needed */
 }
 
+
+
 @media  (min-width:310px) and (max-width: 480px) {
   .sidebar {
     height: 100vh;
