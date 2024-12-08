@@ -12,7 +12,9 @@ const Main = () => {
     input,
     SetInput,
   } = useContext(Context);
-
+  const loadPrompt = async(prompt)=>{
+    await onSent(prompt)
+  }
   return (
     <div className="main">
       <div className="nav">
@@ -29,19 +31,19 @@ const Main = () => {
               <p>How can I help you today ?</p>
             </div>
             <div className="cards">
-              <div className="card">
+              <div className="card"  onClick={()=>loadPrompt("Suggest beautiful places to see on an upcoming road trip")}>
                 <p>Suggest beautiful places to see on an upcoming road trip</p>
                 <img src={assets.compass_icon} alt="" />
               </div>
-              <div className="card">
+              <div className="card"  onClick={()=>loadPrompt("Briefly summarize this concept: urban planning")}>
                 <p>Briefly summarize this concept: urban planning</p>
                 <img src={assets.bulb_icon} alt="" />
               </div>
-              <div className="card">
+              <div className="card"  onClick={()=>loadPrompt("Brainstorm team bonding activities for our work retreat")}>
                 <p>Brainstorm team bonding activities for our work retreat </p>
                 <img src={assets.message_icon} alt="" />
               </div>
-              <div className="card">
+              <div className="card"  onClick={()=>loadPrompt("Improve the readability of the following code")}>
                 <p>Improve the readability of the following code</p>
                 <img src={assets.code_icon} alt="" />
               </div>
