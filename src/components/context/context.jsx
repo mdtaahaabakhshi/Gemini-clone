@@ -84,8 +84,7 @@ const ContextProvider = (props) => {
 
   const formatResultData = (data) => {
     // Replace occurrences of **text** with <strong>text</strong>
-    return data.replace(/\*\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-      .replace(/\*/g, "<br /> <br/>");
+    return data.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>").replace(/\*/g, "<br /> <br/>");
   };
 
   const onSent = async (prompt) => {
