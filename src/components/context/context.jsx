@@ -35,7 +35,7 @@
 //     }
 //     // const response = await runChat(input);
 // // SetResultData(response);
- 
+
 // let  newResponse= response.split(" ");
 // for (let i=0; i<newResponse.length;i++){
 //   const nextWord =newResponse[i]
@@ -78,15 +78,14 @@ const ContextProvider = (props) => {
 
   const delayPara = (index, nextWord) => {
     setTimeout(function () {
-      SetResultData(prev => prev + nextWord);
+      SetResultData((prev) => prev + nextWord);
     }, 75 * index);
   };
 
   const formatResultData = (data) => {
     // Replace occurrences of **text** with <strong>text</strong>
-    return data.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*/g, '<br /> <br/>');
-
+    return data.replace(/\*\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*/g, "<br /> <br/>");
   };
 
   const onSent = async (prompt) => {
