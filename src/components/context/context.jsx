@@ -101,17 +101,17 @@ const ContextProvider = (props) => {
       SetPrevPrompts((prev) => [...prev, input]);
       response = await runChat(input);
     }
+    // Format the result data to make text bold
+    const formattedResponse = formatResultData(response);
+    // SetResultData(formattedResponse);
+    SetLoading(false);
 
-    let newResponse = response.split(" ");
+    let newResponse = formattedResponse.split(" ");
     for (let i = 0; i < newResponse.length; i++) {
       const nextWord = newResponse[i];
       delayPara(i, nextWord + " ");
     }
 
-    // Format the result data to make text bold
-    const formattedResponse = formatResultData(response);
-    SetResultData(formattedResponse);
-    SetLoading(false);
   };
 
   const contextValue = {
